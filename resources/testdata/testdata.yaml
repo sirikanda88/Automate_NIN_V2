@@ -1,0 +1,28 @@
+tt_id: 
+    id_for_create: 0000920
+    #TT26-0001675 Region:Bangkok,Central  Dev.0001824
+
+#กรอกแบบไม่เคาะบรรทัด
+problem_detail_1: 
+    customer_detail: Automate Test create nin from TT not send Test SMS
+    customer_detail_sms_isi_1: Automate Test create nin from TT send Test SMS Level ISI
+    network_effect_details_1: Automate Test format Event1 JB25-2345678 (08:25) Link ME-9008-13 (Ban Khao To) Down.Status:RON is on site.
+    cause_detail_1: Automate RON is repairing OFC at first event.
+
+#กรอกแบบไม่เคาะบรรทัดแต่มี//
+problem_detail_2: 
+    customer_detail_sms_msi_2: Automate Test create nin from TT send Test SMS Level MSI
+    network_effect_details_2: //Automate Test format Event1 JB25-2345678 (08:25) Link ME-9008-13 (Ban Khao To) Down.//Status:RON is on site.
+    cause_detail_2: //Automate RON is repairing OFC at first event.
+
+#กรอกแบบเคาะบรรทัด
+customer_detail_3:
+    customer_detail_sms_ctsi_3: |-
+        Automate Test create nin from TT send Test SMS Level CTSI บรรทัดที่ 1
+        Automate Test create nin from TT send Test SMS Level CTSI บรรทัดที่ 2
+    network_effect_details_3: |-
+        Automate Test format Event1 JB25-2345678 (08:25) Link ME-9008-13 (Ban Khao To) Down.บรรทัดที่ 1.
+        Status:RON is on site.บรรทัดที่ 2.
+    cause_detail_3: |-
+        Automate Test RON is repairing OFC at first event บรรทัดที่ 1.
+        Automate Test RON is repairing OFC at first event บรรทัดที่ 2.

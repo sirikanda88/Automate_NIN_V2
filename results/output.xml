@@ -1,0 +1,1217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2026-03-20T10:20:34.552977" rpa="false" schemaversion="5">
+<suite id="s1" name="Automate NIN" source="D:\Automate_NIN">
+<suite id="s1-s1" name="Testcase" source="D:\Automate_NIN\testcase">
+<suite id="s1-s1-s1" name="TC01 Create NIN Report Header add new fields and Send SMS" source="D:\Automate_NIN\testcase\TC01_Create_NIN_Report_Header_add_new_fields_and_Send_SMS.robot">
+<kw name="Open Trouble Ticket System TTS Web" owner="common" type="SETUP">
+<kw name="New Browser" owner="Browser">
+<msg time="2026-03-20T10:20:35.017520" level="INFO">{"browser": "chromium", "headless": false, "args": ["--start-maximized"], "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "D:\\Automate_NIN\\results\\browser\\traces\\temp\\efad3ebf-0a4a-44f7-b194-04d1628d8a74"}</msg>
+<msg time="2026-03-20T10:20:35.044886" level="INFO">Starting Browser process c:\Users\innop\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:54374</msg>
+<msg time="2026-03-20T10:20:36.341000" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"args":["--start-maximized"],"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"D:\\Automate_NIN\\results\\browser\\traces\\temp\\efad3ebf-0a4a-44f7-b194-04d1628d8a74"}</msg>
+<arg>chromium</arg>
+<arg>headless=${False}</arg>
+<arg>args=['--start-maximized']</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-03-20T10:20:35.016517" elapsed="1.324981"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2026-03-20T10:20:36.346297" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": true,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": null
+}</msg>
+<msg time="2026-03-20T10:20:36.367186" level="INFO">Successfully created context. </msg>
+<msg time="2026-03-20T10:20:36.367706" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': True, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': None}</msg>
+<arg>ignoreHTTPSErrors=${True}</arg>
+<arg>viewport=${None}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2026-03-20T10:20:36.342039" elapsed="0.025976"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2026-03-20T10:20:38.563615" level="INFO">Successfully initialized new page object and opened url: https://10.137.21.212:7000/login-tts</msg>
+<arg>${url}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-03-20T10:20:36.368423" elapsed="2.195615"/>
+</kw>
+<status status="PASS" start="2026-03-20T10:20:35.015661" elapsed="3.548564"/>
+</kw>
+<test id="s1-s1-s1-t1" name="Prerequisite" line="11">
+<kw name="Login TTS Web" owner="common">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:20:38.599443" level="INFO">Waited for Element with selector id=txtUsername at state visible</msg>
+<arg>id=txtUsername</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:20:38.575933" elapsed="0.023823"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:20:38.600787" level="INFO">Fills the text 'jittapop' in the given field.</msg>
+<arg>id=txtUsername</arg>
+<arg>${login}[username]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:20:38.599961" elapsed="0.016399"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:20:38.617177" level="INFO">Fills the text '1234' in the given field.</msg>
+<arg>id=txtPwd</arg>
+<arg>${login}[password]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:20:38.616623" elapsed="0.010200"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:20:38.627942" level="INFO">Clicks the element 'id=btnLogin'.</msg>
+<arg>id=btnLogin</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:20:38.627147" elapsed="0.051700"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:20:40.015885" level="INFO">Waited for Element with selector text="LOGIN" at state visible</msg>
+<arg>text="LOGIN"</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:20:38.679191" elapsed="1.336953"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:20:40.017053" level="INFO">Clicks the element 'text="LOGIN"'.</msg>
+<arg>text="LOGIN"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:20:40.016358" elapsed="0.039808"/>
+</kw>
+<status status="PASS" start="2026-03-20T10:20:38.575396" elapsed="1.480955"/>
+</kw>
+<kw name="Query TT Menu" owner="keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:20:41.396092" level="INFO">Waited for Element with selector text="Query" at state visible</msg>
+<arg>${top_bar_menu_locator_lbl_query}</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:20:40.057153" elapsed="1.339342"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:20:41.397205" level="INFO">Clicks the element 'text="Query"'.</msg>
+<arg>${top_bar_menu_locator_lbl_query}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:20:41.396728" elapsed="0.020713"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:20:41.418204" level="INFO">Clicks the element 'text="Query TT"'.</msg>
+<arg>${top_bar_menu_locator_lbl_query_TT}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:20:41.417682" elapsed="0.036387"/>
+</kw>
+<status status="PASS" start="2026-03-20T10:20:40.056760" elapsed="1.397512"/>
+</kw>
+<kw name="Query TT ID" owner="keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:04.903882" level="INFO">Waited for Element with selector id=ttIdYear &gt;&gt; text="26" at state visible</msg>
+<arg>${query_tt_locator_ddl_ttIdYear}</arg>
+<arg>visible</arg>
+<arg>timeout=30s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:20:41.455091" elapsed="23.449049"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:04.904827" level="INFO">Clicks the element 'id=ttIdText'.</msg>
+<arg>${query_tt_locator_input_ttIdText}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:04.904339" elapsed="0.041266"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:04.947116" level="INFO">Fills the text '0001804' in the given field.</msg>
+<arg>${query_tt_locator_input_ttIdText}</arg>
+<arg>${tt_id}[id]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:04.945949" elapsed="0.010619"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:04.966419" level="INFO">Waited for Element with selector p-panel[header="Search By ID"] button &gt;&gt; text="SEARCH" at state visible</msg>
+<arg>${query_tt_locator_btn_search}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:04.956834" elapsed="0.010202"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:04.972179" level="INFO">Clicks the element 'p-panel[header="Search By ID"] button &gt;&gt; text="SEARCH"'.</msg>
+<arg>${query_tt_locator_btn_search}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:04.967396" elapsed="0.069465"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:05.874413" level="INFO">Waited for Element with selector id=tdTTID &gt;&gt; .id-link at state visible</msg>
+<arg>${query_tt_locator_lnk_tt_id_link}</arg>
+<arg>visible</arg>
+<arg>timeout=15s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:05.037096" elapsed="0.837594"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:05.875378" level="INFO">Clicks the element 'id=tdTTID &gt;&gt; .id-link'.</msg>
+<arg>${query_tt_locator_lnk_tt_id_link}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:05.874896" elapsed="0.019431"/>
+</kw>
+<status status="PASS" start="2026-03-20T10:20:41.454689" elapsed="24.439848"/>
+</kw>
+<status status="PASS" start="2026-03-20T10:20:38.564348" elapsed="27.330481"/>
+</test>
+<test id="s1-s1-s1-t2" name="TC01_000: Report Header display new field : Service Group" line="16">
+<kw name="Field Service group" owner="keywords">
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:05.909410" level="INFO">Clicks the element 'div.item &gt;&gt; label &gt;&gt; text="Create NIN"'.</msg>
+<arg>${create_nin_locator_btn_create_nin}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:05.908953" elapsed="3.686173"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-03-20T10:21:12.504124" level="INFO">Text: 'ALL'</msg>
+<msg time="2026-03-20T10:21:12.504388" level="INFO">${service_text} = ALL</msg>
+<var>${service_text}</var>
+<arg>${service_group_locator_txt_field}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:09.595348" elapsed="2.909130"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${service_text}</arg>
+<arg>ALL</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-03-20T10:21:12.504695" elapsed="0.000330"/>
+</kw>
+<status status="PASS" start="2026-03-20T10:21:05.908534" elapsed="6.596611"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-03-20T10:21:12.668338" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/TC01_000_Service_group_default.png" target="_blank"&gt;&lt;img src="browser/screenshot/TC01_000_Service_group_default.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>fullPage=${True}</arg>
+<arg>filename=TC01_000_Service_group_default</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-03-20T10:21:12.505585" elapsed="0.163101"/>
+</kw>
+<kw name="Service group dropdown list" owner="keywords">
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:12.670742" level="INFO">Clicks the element 'div.p-multiselect-trigger'.</msg>
+<arg>${service_group_locator_ddl_field}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:12.670020" elapsed="0.050098"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:12.725081" level="INFO">Waited for Element with selector div.p-multiselect-items-wrapper at state visible</msg>
+<arg>${service_group_locator_ddl_list}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:12.720385" elapsed="0.005028"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:12.730943" level="INFO">Waited for Element with selector .p-multiselect-item &gt;&gt; text="MBB" at state visible</msg>
+<arg>${service_group_locator_ddl_mbb}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:12.725637" elapsed="0.005606"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-03-20T10:21:12.741653" level="INFO">Text: 'MBB'</msg>
+<arg>${service_group_locator_ddl_mbb}</arg>
+<arg>==</arg>
+<arg>MBB</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:12.731454" elapsed="0.010536"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:12.746721" level="INFO">Waited for Element with selector .p-multiselect-item &gt;&gt; text="FBB" at state visible</msg>
+<arg>${service_group_locator_ddl_fbb}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:12.742214" elapsed="0.004908"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-03-20T10:21:12.756271" level="INFO">Text: 'FBB'</msg>
+<arg>${service_group_locator_ddl_fbb}</arg>
+<arg>==</arg>
+<arg>FBB</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:12.747329" elapsed="0.009266"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:12.761202" level="INFO">Waited for Element with selector .p-multiselect-item &gt;&gt; text="Enterprise" at state visible</msg>
+<arg>${service_group_locator_ddl_enterprise}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:12.756824" elapsed="0.004738"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-03-20T10:21:12.771693" level="INFO">Text: 'Enterprise'</msg>
+<arg>${service_group_locator_ddl_enterprise}</arg>
+<arg>==</arg>
+<arg>Enterprise</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:12.761756" elapsed="0.010255"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:12.776667" level="INFO">Waited for Element with selector .p-multiselect-item &gt;&gt; text="VAS/IT" at state visible</msg>
+<arg>${service_group_locator_ddl_vas_it}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:12.772233" elapsed="0.004802"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-03-20T10:21:12.787964" level="INFO">Text: 'VAS/IT'</msg>
+<arg>${service_group_locator_ddl_vas_it}</arg>
+<arg>==</arg>
+<arg>VAS/IT</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:12.777340" elapsed="0.010949"/>
+</kw>
+<kw name="Scroll To" owner="Browser">
+<msg time="2026-03-20T10:21:12.795045" level="INFO">JavaScript executed successfully.</msg>
+<msg time="2026-03-20T10:21:12.795260" level="INFO">JavaScript executed successfully.</msg>
+<msg time="2026-03-20T10:21:12.800802" level="INFO">JavaScript executed successfully.</msg>
+<msg time="2026-03-20T10:21:12.801050" level="INFO">JavaScript executed successfully.</msg>
+<msg time="2026-03-20T10:21:12.804198" level="INFO">JavaScript executed successfully.</msg>
+<arg>vertical=top</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Scrolls an element or the page to an absolute position based on given coordinates.</doc>
+<status status="PASS" start="2026-03-20T10:21:12.788504" elapsed="0.016078"/>
+</kw>
+<status status="PASS" start="2026-03-20T10:21:12.669326" elapsed="0.135424"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-03-20T10:21:12.950829" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/TC01_000_After_click_dropdown.png" target="_blank"&gt;&lt;img src="browser/screenshot/TC01_000_After_click_dropdown.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>fullPage=${True}</arg>
+<arg>filename=TC01_000_After_click_dropdown</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-03-20T10:21:12.805044" elapsed="0.146072"/>
+</kw>
+<doc>1)TTS Create NIN Report Header shall display new field: Service Group select all network group as default.</doc>
+<tag>Standard Case</tag>
+<status status="PASS" start="2026-03-20T10:21:05.903181" elapsed="7.048328"/>
+</test>
+<test id="s1-s1-s1-t3" name="TC01_001: Report Header update field : Service Group" line="24">
+<kw name="Update Service group" owner="keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:12.972724" level="INFO">Waited for Element with selector div.p-checkbox-box[aria-label="All items selected"] at state visible</msg>
+<arg>${service_group_locator_chk_select_all_item}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:12.967331" elapsed="0.005685"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:12.973873" level="INFO">Clicks the element 'div.p-checkbox-box[aria-label="All items selected"]'.</msg>
+<arg>${service_group_locator_chk_select_all_item}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:12.973232" elapsed="0.037610"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:13.011627" level="INFO">Clicks the element '.p-multiselect-item &gt;&gt; text="FBB"'.</msg>
+<arg>${service_group_locator_ddl_fbb}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.011101" elapsed="0.048991"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:13.060789" level="INFO">Clicks the element '.p-multiselect-item &gt;&gt; text="Enterprise"'.</msg>
+<arg>${service_group_locator_ddl_enterprise}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.060301" elapsed="0.049913"/>
+</kw>
+<status status="PASS" start="2026-03-20T10:21:12.966771" elapsed="0.143678"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-03-20T10:21:13.240314" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/TC01_001_to_update_FBB_Enterprise.png" target="_blank"&gt;&lt;img src="browser/screenshot/TC01_001_to_update_FBB_Enterprise.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>selector=id=body-container-content</arg>
+<arg>filename=TC01_001_to_update_FBB_Enterprise</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.110803" elapsed="0.129967"/>
+</kw>
+<kw name="Verify after update" owner="keywords">
+<kw name="Get Text" owner="Browser">
+<msg time="2026-03-20T10:21:13.255051" level="INFO">Text: 'FBB, Enterprise'</msg>
+<msg time="2026-03-20T10:21:13.255391" level="INFO">${service_text} = FBB, Enterprise</msg>
+<var>${service_text}</var>
+<arg>${service_group_locator_txt_field}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.241802" elapsed="0.013693"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${service_text}</arg>
+<arg>FBB, Enterprise</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.255715" elapsed="0.000467"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:13.256794" level="INFO">Clicks the element 'button[aria-label="Close"]'.</msg>
+<arg>${service_group_locator_btn_close_dropdown}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.256343" elapsed="0.036938"/>
+</kw>
+<status status="PASS" start="2026-03-20T10:21:13.241283" elapsed="0.052211"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-03-20T10:21:13.433627" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/TC01_001_Service%20Group.png" target="_blank"&gt;&lt;img src="browser/screenshot/TC01_001_Service%20Group.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>fullPage=${True}</arg>
+<arg>filename=TC01_001_Service Group</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.293820" elapsed="0.140113"/>
+</kw>
+<doc>1)TTS Create NIN Report Header can updated the Service Group success.</doc>
+<tag>Standard Case</tag>
+<status status="PASS" start="2026-03-20T10:21:12.960312" elapsed="0.473960"/>
+</test>
+<test id="s1-s1-s1-t4" name="TC01_002: Report Header display new field : Test SMS" line="32">
+<kw name="Test SMS details" owner="keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:13.457146" level="INFO">Waited for Element with selector label.text-label:has-text("Test SMS") at state visible</msg>
+<arg>${test_sms_locator_lbl_Test SMS}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.451511" elapsed="0.005908"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:13.462337" level="INFO">Waited for Element with selector id=testSmsFlag at state visible</msg>
+<arg>${test_sms_locator_chk_Test SMS}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.457623" elapsed="0.005090"/>
+</kw>
+<kw name="Get Checkbox State" owner="Browser">
+<msg time="2026-03-20T10:21:13.471009" level="INFO">Retrieved dom property for element id=testSmsFlag containing undefined</msg>
+<msg time="2026-03-20T10:21:13.471342" level="INFO">Checkbox is unchecked</msg>
+<arg>${test_sms_locator_chk_Test SMS}</arg>
+<arg>==</arg>
+<arg>unchecked</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the state of the checkbox found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.462921" elapsed="0.008656"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:13.476132" level="INFO">Waited for Element with selector id=mobileNo at state visible</msg>
+<arg>${test_sms_locator_txt_mobile}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.471797" elapsed="0.004707"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-03-20T10:21:13.484729" level="INFO">Text: '0612345880'</msg>
+<arg>${test_sms_locator_txt_mobile}</arg>
+<arg>==</arg>
+<arg>${user_profile}[mobile_no]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.476710" elapsed="0.008452"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:13.490346" level="INFO">Waited for Element with selector label.text-align-left:has-text("Test SMS: Sends an SMS to the phone number you entered for verification.") at state visible</msg>
+<arg>${test_sms_locator_lbl_Test SMS_Sends}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.485534" elapsed="0.005223"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-03-20T10:21:13.501322" level="INFO">Text: 'Test SMS: Sends an SMS to the phone number you entered for verification.'</msg>
+<arg>${test_sms_locator_lbl_Test SMS_Sends}</arg>
+<arg>contains</arg>
+<arg>Test SMS: Sends an SMS to the phone number you entered for verification.</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.490964" elapsed="0.010674"/>
+</kw>
+<status status="PASS" start="2026-03-20T10:21:13.451050" elapsed="0.050765"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-03-20T10:21:13.634410" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/TC01_002.png" target="_blank"&gt;&lt;img src="browser/screenshot/TC01_002.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>fullPage=${True}</arg>
+<arg>filename=TC01_002</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.502152" elapsed="0.132587"/>
+</kw>
+<doc>1)TTS Create NIN Report Header shall display new field: Test SMS with the phone number of NIN creator set as default.</doc>
+<tag>Standard Case</tag>
+<status status="PASS" start="2026-03-20T10:21:13.444381" elapsed="0.190857"/>
+</test>
+<test id="s1-s1-s1-t5" name="TC01_003: Report Header update mobile number field : Test SMS" line="38">
+<kw name="Update Test SMS mobile" owner="keywords">
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:13.651964" level="INFO">Clicks the element 'id=testSmsFlag'.</msg>
+<arg>${test_sms_locator_chk_Test SMS}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.651400" elapsed="0.041410"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:13.693574" level="INFO">Fills the text '0812345678' in the given field.</msg>
+<arg>${test_sms_locator_txt_mobile}</arg>
+<arg>${update_mobile_send_sms}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.693045" elapsed="0.011257"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-20T10:21:16.705645" level="INFO">Slept 3 seconds.</msg>
+<arg>time_=3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-20T10:21:13.704628" elapsed="3.001260"/>
+</kw>
+<status status="PASS" start="2026-03-20T10:21:13.650947" elapsed="3.055079"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-03-20T10:21:16.844951" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/TC01_003.png" target="_blank"&gt;&lt;img src="browser/screenshot/TC01_003.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>fullPage=${True}</arg>
+<arg>filename=TC01_003</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-03-20T10:21:16.706557" elapsed="0.138682"/>
+</kw>
+<doc>1) TTS Create NIN Report Header can updated the mobile number forTest SMS success.</doc>
+<tag>Standard Case</tag>
+<status status="PASS" start="2026-03-20T10:21:13.644235" elapsed="3.201561"/>
+</test>
+<test id="s1-s1-s1-t6" name="TC01_004: Create NIN Fault from TT Not Send Test SMS" line="44">
+<kw name="Create NIN From TT Not Send Test SMS" owner="keywords">
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:16.862884" level="INFO">Clicks the element 'id=btnReset'.</msg>
+<arg>${create_nin_locator_btn_reset}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:16.862444" elapsed="0.057721"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:16.922008" level="INFO">Clicks the element 'id=chkLevel(3)'.</msg>
+<arg>${level_locator_chk_ctsi}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:16.921233" elapsed="0.036523"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:16.958494" level="INFO">Clicks the element 'id=ITSD_CHECKBOX'.</msg>
+<arg>${show_alert_chk_it_service_desk}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:16.957989" elapsed="0.034377"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:16.993092" level="INFO">Fills the text 'Automate Test create nin from TT not send Test SMS' in the given field.</msg>
+<arg>${problem_locator_txt_customer_impact}</arg>
+<arg>${problem_detail}[customer_detail]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:16.992588" elapsed="0.013633"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:17.007066" level="INFO">Clicks the element 'id=btnRadioAffectArea(2)'.</msg>
+<arg>${problem_locator_aff_area_radio_region}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:17.006496" elapsed="0.035321"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:17.042611" level="INFO">Fills the text 'Automate Test format Event1 JB25-2042657 (08:25) Link ME-9008-13 (Ban Khao To) Down.Status:RON is on site.' in the given field.</msg>
+<arg>${problem_locator_txt_network_effect}</arg>
+<arg>${problem_detail}[network_effect_details]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:17.042058" elapsed="0.014770"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:17.057631" level="INFO">Fills the text 'Automate RON is repairing OFC at first event.' in the given field.</msg>
+<arg>${problem_locator_txt_cause}</arg>
+<arg>${problem_detail}[cause_detail]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:17.057083" elapsed="0.015102"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:17.073400" level="INFO">Clicks the element 'id=btnSubmit'.</msg>
+<arg>${create_nin_locator_btn_submit}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:17.072565" elapsed="0.042415"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:19.490522" level="INFO">Waited for Element with selector id=txtRelateTTId at state visible</msg>
+<arg>${relate_locator_lbl_tt_id}</arg>
+<arg>visible</arg>
+<arg>timeout=15s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:17.115238" elapsed="2.375534"/>
+</kw>
+<status status="PASS" start="2026-03-20T10:21:16.862033" elapsed="2.628890"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-03-20T10:21:19.613258" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/TC01_004.png" target="_blank"&gt;&lt;img src="browser/screenshot/TC01_004.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>fullPage=${True}</arg>
+<arg>filename=TC01_004</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-03-20T10:21:19.491394" elapsed="0.122263"/>
+</kw>
+<doc>1) TTS Create NIN Fault from TT success, and the Service group and Test SMS fields are display with default values.</doc>
+<tag>Standard Case</tag>
+<status status="PASS" start="2026-03-20T10:21:16.855388" elapsed="2.758697"/>
+</test>
+<test id="s1-s1-s1-t7" name="TC01_005: Create NIN Fault from TT Send Test SMS Level : ISI" line="50">
+<kw name="Create NIN From TT Send Test SMS level:ISI" owner="keywords">
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:19.628464" level="INFO">Clicks the element 'id=txtRelateTTId'.</msg>
+<arg>${relate_locator_lbl_tt_id}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:19.628027" elapsed="0.075998"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:19.705264" level="INFO">Clicks the element 'div.item &gt;&gt; label &gt;&gt; text="Create NIN"'.</msg>
+<arg>${create_nin_locator_btn_create_nin}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:19.704396" elapsed="2.512406"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:22.217542" level="INFO">Clicks the element 'id=chkLevel(1)'.</msg>
+<arg>${level_locator_chk_isi}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:22.217033" elapsed="2.422774"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:24.640575" level="INFO">Clicks the element 'id=ITSD_CHECKBOX'.</msg>
+<arg>${show_alert_chk_it_service_desk}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:24.640033" elapsed="0.049087"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:24.689824" level="INFO">Clicks the element 'id=testSmsFlag'.</msg>
+<arg>${test_sms_locator_chk_Test SMS}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:24.689345" elapsed="0.049158"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:24.739232" level="INFO">Fills the text '0812345678' in the given field.</msg>
+<arg>${test_sms_locator_txt_mobile}</arg>
+<arg>${update_mobile_send_sms}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:24.738728" elapsed="0.011749"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:24.751292" level="INFO">Fills the text 'Automate Test create nin from TT send Test SMS Level ISI' in the given field.</msg>
+<arg>${problem_locator_txt_customer_impact}</arg>
+<arg>${problem_detail}[customer_detail_sms_isi]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:24.750732" elapsed="0.011735"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:24.763804" level="INFO">Clicks the element 'id=btnRadioAffectArea(2)'.</msg>
+<arg>${problem_locator_aff_area_radio_region}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:24.762848" elapsed="0.043076"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:24.806714" level="INFO">Fills the text 'Automate Test format Event1 JB25-2042657 (08:25) Link ME-9008-13 (Ban Khao To) Down.Status:RON is on site.' in the given field.</msg>
+<arg>${problem_locator_txt_network_effect}</arg>
+<arg>${problem_detail}[network_effect_details]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:24.806161" elapsed="0.013634"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:24.820633" level="INFO">Fills the text 'Automate RON is repairing OFC at first event.' in the given field.</msg>
+<arg>${problem_locator_txt_cause}</arg>
+<arg>${problem_detail}[cause_detail]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:24.820041" elapsed="0.015690"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:24.836512" level="INFO">Clicks the element 'id=btnSubmit'.</msg>
+<arg>${create_nin_locator_btn_submit}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:24.835975" elapsed="0.044379"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:27.782054" level="INFO">Waited for Element with selector id=txtRelateTTId at state visible</msg>
+<arg>${relate_locator_lbl_tt_id}</arg>
+<arg>visible</arg>
+<arg>timeout=15s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:24.880601" elapsed="2.901744"/>
+</kw>
+<status status="PASS" start="2026-03-20T10:21:19.627622" elapsed="8.154872"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-03-20T10:21:27.909710" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/TC01_005.png" target="_blank"&gt;&lt;img src="browser/screenshot/TC01_005.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>fullPage=${True}</arg>
+<arg>filename=TC01_005</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-03-20T10:21:27.782974" elapsed="0.127363"/>
+</kw>
+<doc>1) TTS Create NIN Fault from TT success, and the Service group and Test SMS fields are displayed with the entered values.
+
+2) TTS Sender:NINFaultTest sent the SMS to Mobile no : 0812345678 for Level : ISI success.</doc>
+<tag>Standard Case</tag>
+<status status="PASS" start="2026-03-20T10:21:19.621805" elapsed="8.288910"/>
+</test>
+<test id="s1-s1-s1-t8" name="TC01_006: Create NIN Fault from TT Send Test SMS Level : MSI" line="57">
+<kw name="Create NIN From TT Send Test SMS level:MSI" owner="keywords">
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:27.926800" level="INFO">Clicks the element 'id=txtRelateTTId'.</msg>
+<arg>${relate_locator_lbl_tt_id}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:27.926295" elapsed="0.068172"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:27.995549" level="INFO">Clicks the element 'div.item &gt;&gt; label &gt;&gt; text="Create NIN"'.</msg>
+<arg>${create_nin_locator_btn_create_nin}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:27.994775" elapsed="2.636329"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:30.631807" level="INFO">Clicks the element 'id=chkLevel(2)'.</msg>
+<arg>${level_locator_chk_msi}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:30.631326" elapsed="2.937828"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:33.569866" level="INFO">Clicks the element 'id=ITSD_CHECKBOX'.</msg>
+<arg>${show_alert_chk_it_service_desk}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:33.569377" elapsed="0.048565"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:33.618779" level="INFO">Clicks the element 'id=FBB_CHECKBOX'.</msg>
+<arg>${show_alert_chk_fbb_helpdesk_support}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:33.618176" elapsed="0.033635"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:33.652548" level="INFO">Clicks the element 'id=testSmsFlag'.</msg>
+<arg>${test_sms_locator_chk_Test SMS}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:33.652045" elapsed="0.032326"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:33.685152" level="INFO">Fills the text '0812345678' in the given field.</msg>
+<arg>${test_sms_locator_txt_mobile}</arg>
+<arg>${update_mobile_send_sms}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:33.684606" elapsed="0.008739"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:33.694317" level="INFO">Fills the text 'Automate Test create nin from TT send Test SMS Level MSI' in the given field.</msg>
+<arg>${problem_locator_txt_customer_impact}</arg>
+<arg>${problem_detail}[customer_detail_sms_msi]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:33.693600" elapsed="0.016918"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:33.711911" level="INFO">Clicks the element 'id=btnRadioAffectArea(2)'.</msg>
+<arg>${problem_locator_aff_area_radio_region}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:33.711168" elapsed="0.041255"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:33.753206" level="INFO">Fills the text 'Automate Test format Event1 JB25-2042657 (08:25) Link ME-9008-13 (Ban Khao To) Down.Status:RON is on site.' in the given field.</msg>
+<arg>${problem_locator_txt_network_effect}</arg>
+<arg>${problem_detail}[network_effect_details]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:33.752657" elapsed="0.011527"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:33.765683" level="INFO">Fills the text 'Automate RON is repairing OFC at first event.' in the given field.</msg>
+<arg>${problem_locator_txt_cause}</arg>
+<arg>${problem_detail}[cause_detail]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:33.764598" elapsed="0.013030"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:33.778509" level="INFO">Clicks the element 'id=btnSubmit'.</msg>
+<arg>${create_nin_locator_btn_submit}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:33.777927" elapsed="0.047614"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:36.718572" level="INFO">Waited for Element with selector id=txtRelateTTId at state visible</msg>
+<arg>${relate_locator_lbl_tt_id}</arg>
+<arg>visible</arg>
+<arg>timeout=15s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:33.826083" elapsed="2.892770"/>
+</kw>
+<status status="PASS" start="2026-03-20T10:21:27.925882" elapsed="8.793137"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-03-20T10:21:36.842680" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/TC01_006.png" target="_blank"&gt;&lt;img src="browser/screenshot/TC01_006.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>fullPage=${True}</arg>
+<arg>filename=TC01_006</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-03-20T10:21:36.719507" elapsed="0.123479"/>
+</kw>
+<doc>1) TTS Create NIN Fault from TT success, and the Service group and Test SMS fields are displayed with the entered values.
+
+2) TTS Sender:NINFaultTest sent the SMS to Mobile no : 0812345678 for Level : MSI success.</doc>
+<tag>Standard Case</tag>
+<status status="PASS" start="2026-03-20T10:21:27.919621" elapsed="8.924036"/>
+</test>
+<test id="s1-s1-s1-t9" name="TC01_007: Create NIN Fault from TT Send Test SMS Level : CTSI" line="64">
+<kw name="Create NIN From TT Send Test SMS level:CTSI" owner="keywords">
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:36.860299" level="INFO">Clicks the element 'id=txtRelateTTId'.</msg>
+<arg>${relate_locator_lbl_tt_id}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:36.859824" elapsed="0.068384"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:36.928981" level="INFO">Clicks the element 'div.item &gt;&gt; label &gt;&gt; text="Create NIN"'.</msg>
+<arg>${create_nin_locator_btn_create_nin}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:36.928429" elapsed="2.631987"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:39.561154" level="INFO">Clicks the element 'id=chkLevel(3)'.</msg>
+<arg>${level_locator_chk_ctsi}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:39.560648" elapsed="2.922285"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:42.483752" level="INFO">Clicks the element 'id=ITSD_CHECKBOX'.</msg>
+<arg>${show_alert_chk_it_service_desk}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:42.483159" elapsed="0.032172"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:42.516071" level="INFO">Clicks the element 'id=FBB_CHECKBOX'.</msg>
+<arg>${show_alert_chk_fbb_helpdesk_support}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:42.515580" elapsed="0.032578"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:42.548892" level="INFO">Clicks the element 'id=testSmsFlag'.</msg>
+<arg>${test_sms_locator_chk_Test SMS}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:42.548395" elapsed="0.033371"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:42.582530" level="INFO">Fills the text '0812345678' in the given field.</msg>
+<arg>${test_sms_locator_txt_mobile}</arg>
+<arg>${update_mobile_send_sms}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:42.581999" elapsed="0.008507"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:42.591432" level="INFO">Fills the text 'Automate Test create nin from TT send Test SMS Level CTSI' in the given field.</msg>
+<arg>${problem_locator_txt_customer_impact}</arg>
+<arg>${problem_detail}[customer_detail_sms_ctsi]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:42.590762" elapsed="0.014118"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:42.606107" level="INFO">Clicks the element 'id=btnRadioAffectArea(2)'.</msg>
+<arg>${problem_locator_aff_area_radio_region}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:42.605260" elapsed="0.043869"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:42.649875" level="INFO">Fills the text 'Automate Test format Event1 JB25-2042657 (08:25) Link ME-9008-13 (Ban Khao To) Down.Status:RON is on site.' in the given field.</msg>
+<arg>${problem_locator_txt_network_effect}</arg>
+<arg>${problem_detail}[network_effect_details]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:42.649349" elapsed="0.011059"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:42.661382" level="INFO">Fills the text 'Automate RON is repairing OFC at first event.' in the given field.</msg>
+<arg>${problem_locator_txt_cause}</arg>
+<arg>${problem_detail}[cause_detail]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:42.660776" elapsed="0.013891"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:42.675620" level="INFO">Clicks the element 'id=btnSubmit'.</msg>
+<arg>${create_nin_locator_btn_submit}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:42.674914" elapsed="0.050226"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:46.114229" level="INFO">Waited for Element with selector id=txtRelateTTId at state visible</msg>
+<arg>${relate_locator_lbl_tt_id}</arg>
+<arg>visible</arg>
+<arg>timeout=15s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:42.725400" elapsed="3.389122"/>
+</kw>
+<status status="PASS" start="2026-03-20T10:21:36.859381" elapsed="9.255296"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-03-20T10:21:46.239324" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/TC01_007.png" target="_blank"&gt;&lt;img src="browser/screenshot/TC01_007.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>fullPage=${True}</arg>
+<arg>filename=TC01_007</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-03-20T10:21:46.115091" elapsed="0.124553"/>
+</kw>
+<doc>1) TTS Create NIN Fault from TT success, and the Service group and Test SMS fields are displayed with the entered values.
+
+2) TTS Sender:NINFaultTest sent the SMS to Mobile no : 0812345678 for Level : CTSI success.</doc>
+<tag>Standard Case</tag>
+<status status="PASS" start="2026-03-20T10:21:36.852468" elapsed="9.387579"/>
+</test>
+<test id="s1-s1-s1-t10" name="TC01_008: Create NIN Fault from TT Test SMS Mobile no is empty" line="71">
+<kw name="Create NIN From TT Send Test SMS Mobile no is empty" owner="keywords">
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:46.258836" level="INFO">Clicks the element 'id=txtRelateTTId'.</msg>
+<arg>${relate_locator_lbl_tt_id}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:46.258378" elapsed="0.062557"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:46.323700" level="INFO">Clicks the element 'div.item &gt;&gt; label &gt;&gt; text="Create NIN"'.</msg>
+<arg>${create_nin_locator_btn_create_nin}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:46.321400" elapsed="2.507009"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:48.829072" level="INFO">Clicks the element 'id=chkLevel(2)'.</msg>
+<arg>${level_locator_chk_msi}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:48.828612" elapsed="2.435348"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:51.264677" level="INFO">Clicks the element 'id=ITSD_CHECKBOX'.</msg>
+<arg>${show_alert_chk_it_service_desk}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:51.264182" elapsed="0.047302"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:51.312193" level="INFO">Clicks the element 'id=FBB_CHECKBOX'.</msg>
+<arg>${show_alert_chk_fbb_helpdesk_support}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:51.311702" elapsed="0.033506"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:51.345969" level="INFO">Clicks the element 'id=testSmsFlag'.</msg>
+<arg>${test_sms_locator_chk_Test SMS}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:51.345464" elapsed="0.033260"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:51.379435" level="INFO">Clicks the element 'id=mobileNo'.</msg>
+<arg>${test_sms_locator_txt_mobile}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:51.378944" elapsed="0.034325"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>${test_sms_locator_txt_mobile}</arg>
+<arg>Control+a</arg>
+<arg>Delete</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:51.413590" elapsed="0.018024"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:51.432422" level="INFO">Fills the text 'Automate Test create nin from TT send Test SMS Level MSI' in the given field.</msg>
+<arg>${problem_locator_txt_customer_impact}</arg>
+<arg>${problem_detail}[customer_detail_sms_msi]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:51.431862" elapsed="0.014199"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:51.446870" level="INFO">Clicks the element 'id=btnRadioAffectArea(2)'.</msg>
+<arg>${problem_locator_aff_area_radio_region}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:51.446307" elapsed="0.032308"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:51.479403" level="INFO">Fills the text 'Automate Test format Event1 JB25-2042657 (08:25) Link ME-9008-13 (Ban Khao To) Down.Status:RON is on site.' in the given field.</msg>
+<arg>${problem_locator_txt_network_effect}</arg>
+<arg>${problem_detail}[network_effect_details]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:51.478850" elapsed="0.012538"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-20T10:21:51.492207" level="INFO">Fills the text 'Automate RON is repairing OFC at first event.' in the given field.</msg>
+<arg>${problem_locator_txt_cause}</arg>
+<arg>${problem_detail}[cause_detail]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:51.491645" elapsed="0.011697"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:51.504288" level="INFO">Clicks the element 'id=btnSubmit'.</msg>
+<arg>${create_nin_locator_btn_submit}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:51.503679" elapsed="0.051341"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:51.561170" level="INFO">Waited for Element with selector text="กรุณากรอก mobileNo" at state visible</msg>
+<arg>text="กรุณากรอก mobileNo"</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:51.555266" elapsed="0.006341"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-03-20T10:21:51.703314" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/TC01_008.png" target="_blank"&gt;&lt;img src="browser/screenshot/TC01_008.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>fullPage=${True}</arg>
+<arg>filename=TC01_008</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-03-20T10:21:51.561892" elapsed="0.142081"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-20T10:21:51.705111" level="INFO">Clicks the element 'button[type="button"] :text-is("CLOSE")'.</msg>
+<arg>${create_nin_locator_btn_close_warning_popup}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-20T10:21:51.704269" elapsed="0.041031"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-20T10:21:51.957721" level="INFO">Waited for Element with selector css=.p-dialog-mask at state hidden</msg>
+<arg>css=.p-dialog-mask</arg>
+<arg>hidden</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-20T10:21:51.745542" elapsed="0.212457"/>
+</kw>
+<status status="PASS" start="2026-03-20T10:21:46.257932" elapsed="5.700222"/>
+</kw>
+<doc>1) TTS can not Create NIN Fault from TT success, and display warning as below:
+
+ " กรุณากรอก mobileNo "</doc>
+<tag>Standard Case</tag>
+<status status="PASS" start="2026-03-20T10:21:46.249056" elapsed="5.709551"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-03-20T10:21:51.968267" elapsed="0.000440"/>
+</kw>
+<status status="PASS" start="2026-03-20T10:20:34.589719" elapsed="77.379104"/>
+</suite>
+<status status="PASS" start="2026-03-20T10:20:34.586156" elapsed="77.418476"/>
+</suite>
+<status status="PASS" start="2026-03-20T10:20:34.557568" elapsed="77.453962"/>
+</suite>
+<statistics>
+<total>
+<stat pass="10" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="9" fail="0" skip="0">Standard Case</stat>
+</tag>
+<suite>
+<stat name="Automate NIN" id="s1" pass="10" fail="0" skip="0">Automate NIN</stat>
+<stat name="Testcase" id="s1-s1" pass="10" fail="0" skip="0">Automate NIN.Testcase</stat>
+<stat name="TC01 Create NIN Report Header add new fields and Send SMS" id="s1-s1-s1" pass="10" fail="0" skip="0">Automate NIN.Testcase.TC01 Create NIN Report Header add new fields and Send SMS</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

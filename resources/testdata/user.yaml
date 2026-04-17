@@ -1,0 +1,11 @@
+login:
+    username: jittapop
+    password: 1234
+
+user_profile:
+    username: jittapop
+    tel_no: 0812345678
+    mobile_no: 0612345880
+
+update_mobile_send_sms: 0812345678
+update_mobile_incorrect_format: 812345678
