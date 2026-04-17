@@ -1,9 +1,9 @@
 login:
-    username: jittapop
+    username: Test1
     password: 1234
 
 user_profile:
-    username: jittapop
+    username: Test1
     tel_no: 0812345678
     mobile_no: 0612345880
 
